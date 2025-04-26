@@ -32,5 +32,12 @@ public class NotificationController {
         return new ResponseEntity<>(savedNotification, HttpStatus.CREATED);
     }
 
+    
+  @DeleteMapping("/{id}")
+  public ResponseEntity<Void> deleteNotification(@PathVariable String id) {
+      notificationRepository.deleteById(id);
+      return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+  }
+
 
 }
